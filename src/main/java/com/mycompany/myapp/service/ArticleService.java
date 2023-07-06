@@ -4,6 +4,7 @@ import com.mycompany.myapp.domain.Article;
 import com.mycompany.myapp.repository.ArticleRepository;
 import com.mycompany.myapp.service.dto.ArticleDTO;
 import com.mycompany.myapp.service.mapper.ArticleMapper;
+import java.util.List;
 import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -83,6 +84,11 @@ public class ArticleService {
     public Page<ArticleDTO> findAll(Pageable pageable) {
         log.debug("Request to get all Articles");
         return articleRepository.findAll(pageable).map(articleMapper::toDto);
+    }
+
+    public List<ArticleDTO> findAllOrderByCreatedat() {
+        log.debug("Request to get all Articles");
+        return articleRepository.findAllByOrderByCreatedat();
     }
 
     /**

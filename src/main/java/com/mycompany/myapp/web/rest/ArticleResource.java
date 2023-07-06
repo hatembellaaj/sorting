@@ -151,6 +151,20 @@ public class ArticleResource {
     }
 
     /**
+     * {@code GET  /sortedarticles} : get all the articles sorted by createdat.
+     *
+     * @param pageable the pagination information.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of articles in body.
+     */
+    @GetMapping("/sortedarticles")
+    public ResponseEntity<List<ArticleDTO>> findAllOrderByCreatedat() {
+        log.debug("REST request to get a page of Articles");
+        List<ArticleDTO> ladto = articleService.findAllOrderByCreatedat();
+
+        return ResponseEntity.ok().body(ladto);
+    }
+
+    /**
      * {@code GET  /articles/:id} : get the "id" article.
      *
      * @param id the id of the articleDTO to retrieve.
