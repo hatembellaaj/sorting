@@ -1,0 +1,23 @@
+{
+  "changelogDate": "20230706160555",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "content",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "name": "Article",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}
